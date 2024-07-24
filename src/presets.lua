@@ -59,7 +59,7 @@ return {
         -- The default LuaVersion is Lua51
         LuaVersion = "Lua51";
         -- For minifying no VarNamePrefix is applied
-        VarNamePrefix = "";
+        VarNamePrefix = "NightDev_";
         -- Name Generator for Variables
         NameGenerator = "MangledShuffled";
         -- No pretty printing
@@ -75,7 +75,7 @@ return {
                 };
             },
             {
-                Name = "AntiTamper";
+                Name = "SplitStrings";
                 Settings = {
                     UseDebug = false;
                 };
