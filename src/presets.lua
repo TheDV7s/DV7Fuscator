@@ -75,7 +75,7 @@ return {
                 };
             },
             {
-                Name = "SplitStrings";
+                Name = "WrapInFunction";
                 Settings = {
                     UseDebug = false;
                 };
@@ -97,13 +97,13 @@ return {
                 }
             },
             {
-                Name = "SplitStrings";
+                Name = "ConstantArray";
                 Settings = {
 
                 }
             },
             {
-                Name = "SplitStrings";
+                Name = "ProxifyLocals";
                 Settings = {
 
                 }
