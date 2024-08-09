@@ -59,7 +59,7 @@ return {
         -- The default LuaVersion is Lua51
         LuaVersion = "Lua51";
         -- For minifying no VarNamePrefix is applied
-        VarNamePrefix = "";
+        VarNamePrefix = "Krixx";
         -- Name Generator for Variables
         NameGenerator = "MangledShuffled";
         -- No pretty printing
@@ -69,13 +69,13 @@ return {
         -- Obfuscation steps
         Steps = {
             {
-                Name = "EncryptStrings";
+                Name = "ProxifyLocals";
                 Settings = {
 
                 };
             },
             {
-                Name = "AntiTamper";
+                Name = "SplitStrings";
                 Settings = {
                     UseDebug = false;
                 };
@@ -97,13 +97,13 @@ return {
                 }
             },
             {
-                Name = "NumbersToExpressions";
+                Name = "SplitStrings";
                 Settings = {
 
                 }
             },
             {
-                Name = "WrapInFunction";
+                Name = "SplitStrings";
                 Settings = {
 
                 }
