@@ -1,78 +1,50 @@
--- This Script is Part of the Prometheus Obfuscator by Levno_710
---
--- pipeline.lua
---
--- This Script Provides some configuration presets
-
 return {
     ["Minify"] = {
-        -- The default LuaVersion is Lua51
-        LuaVersion = "Lua51";
-        -- For minifying no VarNamePrefix is applied
-        VarNamePrefix = "";
-        -- Name Generator for Variables
-        NameGenerator = "MangledShuffled";
-        -- No pretty printing
-        PrettyPrint = false;
-        -- Seed is generated based on current time
-        Seed = 0;
-        -- No obfuscation steps
-        Steps = {
-
-        }
+        LuaVersion = "Lua51";  -- The default LuaVersion is Lua51
+        VarNamePrefix = "";  -- For minifying, no VarNamePrefix is applied
+        NameGenerator = "MangledShuffled";  -- Name Generator for Variables
+        PrettyPrint = false;  -- No pretty printing
+        Seed = 0;  -- Seed is generated based on current time
+        Steps = {}  -- No obfuscation steps
     };
     ["Weak"] = {
-        -- The default LuaVersion is Lua51
-        LuaVersion = "Lua51";
-        -- For minifying no VarNamePrefix is applied
-        VarNamePrefix = "";
-        -- Name Generator for Variables that look like this: IlI1lI1l
-        NameGenerator = "MangledShuffled";
-        -- No pretty printing
-        PrettyPrint = false;
-        -- Seed is generated based on current time
-        Seed = 0;
-        -- Obfuscation steps
-        Steps = {
+        LuaVersion = "Lua51";  -- The default LuaVersion is Lua51
+        VarNamePrefix = "";  -- For minifying, no VarNamePrefix is applied
+        NameGenerator = "MangledShuffled";  -- Name Generator for Variables that look like this: IlI1lI1l
+        PrettyPrint = false;  -- No pretty printing
+        Seed = 0;  -- Seed is generated based on current time
+        Steps = {  -- Obfuscation steps
             {
                 Name = "Vmify";
-                Settings = {
-                    
-                };
+                Settings = {};
             },
             {
                 Name = "ConstantArray";
                 Settings = {
-                    Treshold    = 1;
+                    Treshold = 1;
                     StringsOnly = true;
-                }
+                };
             },
             {
                 Name = "WrapInFunction";
-                Settings = {
-
-                }
+                Settings = {};
             },
+            {
+                Name = "ProxifyLocals";
+                Settings = {};
+            }
         }
     };
     ["Medium"] = {
-        -- The default LuaVersion is Lua51
-        LuaVersion = "Lua51";
-        -- For minifying no VarNamePrefix is applied
-        VarNamePrefix = "Krixx";
-        -- Name Generator for Variables
-        NameGenerator = "MangledShuffled";
-        -- No pretty printing
-        PrettyPrint = false;
-        -- Seed is generated based on current time
-        Seed = 0;
-        -- Obfuscation steps
-        Steps = {
+        LuaVersion = "Lua51";  -- The default LuaVersion is Lua51
+        VarNamePrefix = "Krixx";  -- VarNamePrefix applied
+        NameGenerator = "MangledShuffled";  -- Name Generator for Variables
+        PrettyPrint = false;  -- No pretty printing
+        Seed = 0;  -- Seed is generated based on current time
+        Steps = {  -- Obfuscation steps
             {
                 Name = "ProxifyLocals";
-                Settings = {
-
-                };
+                Settings = {};
             },
             {
                 Name = "WrapInFunction";
@@ -82,93 +54,69 @@ return {
             },
             {
                 Name = "Vmify";
+                Settings = {};
+            },
+            {
+                Name = "ConstantArray";
                 Settings = {
-                    
+                    Treshold = 1;
+                    StringsOnly = true;
+                    Shuffle = true;
+                    Rotate = true;
+                    LocalWrapperTreshold = 0;
                 };
             },
             {
                 Name = "ConstantArray";
-                Settings = {
-                    Treshold    = 1;
-                    StringsOnly = true;
-                    Shuffle     = true;
-                    Rotate      = true;
-                    LocalWrapperTreshold = 0;
-                }
-            },
-            {
-                Name = "ConstantArray";
-                Settings = {
-
-                }
+                Settings = {};
             },
             {
                 Name = "ProxifyLocals";
-                Settings = {
-
-                }
-            },
+                Settings = {};
+            }
         }
     };
     ["Strong"] = {
-        -- The default LuaVersion is Lua51
-        LuaVersion = "Lua51";
-        -- For minifying no VarNamePrefix is applied
-        VarNamePrefix = "";
-        -- Name Generator for Variables that look like this: IlI1lI1l
-        NameGenerator = "MangledShuffled";
-        -- No pretty printing
-        PrettyPrint = false;
-        -- Seed is generated based on current time
-        Seed = 0;
-        -- Obfuscation steps
-        Steps = {
+        LuaVersion = "Lua51";  -- The default LuaVersion is Lua51
+        VarNamePrefix = "";  -- For minifying, no VarNamePrefix is applied
+        NameGenerator = "MangledShuffled";  -- Name Generator for Variables that look like this: IlI1lI1l
+        PrettyPrint = false;  -- No pretty printing
+        Seed = 0;  -- Seed is generated based on current time
+        Steps = {  -- Obfuscation steps
             {
                 Name = "Vmify";
-                Settings = {
-                    
-                };
+                Settings = {};
             },
             {
                 Name = "EncryptStrings";
-                Settings = {
-
-                };
+                Settings = {};
             },
             {
                 Name = "AntiTamper";
-                Settings = {
-
-                };
+                Settings = {};
             },
             {
                 Name = "Vmify";
-                Settings = {
-                    
-                };
+                Settings = {};
             },
             {
                 Name = "ConstantArray";
                 Settings = {
-                    Treshold    = 1;
+                    Treshold = 1;
                     StringsOnly = true;
-                    Shuffle     = true;
-                    Rotate      = true;
+                    Shuffle = true;
+                    Rotate = true;
                     LocalWrapperTreshold = 0;
-                }
+                };
             },
             {
                 Name = "NumbersToExpressions";
-                Settings = {
-
-                }
+                Settings = {};
             },
             {
                 Name = "WrapInFunction";
-                Settings = {
-
-                }
-            },
+                Settings = {};
+            }
         }
-    },
+    }
 }
